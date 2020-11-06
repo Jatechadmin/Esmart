@@ -1,0 +1,212 @@
+@color-main: #166ab3;
+@color-accent1: #003664;
+@color-accent2: #04244b;
+@color-accent3: #0c99c7;
+@color-light-gray: #f6f6f6;
+@color-yellow: #c2d934;
+@color-white: #fff;
+
+.homepage {
+  .banner {
+    position: relative;
+    display: block;
+    height: 50vw;
+    max-height: 500px;
+    overflow: hidden;
+
+    .background {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    .blue-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 10px;
+      width: 10vw;
+      max-width: 100px;
+    }
+
+    .right {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      text-align: right;
+      padding: 4vw;
+
+      img {
+        max-width: 50% !important;
+      }
+
+      h1 {
+        color: yellow;
+        font-size: 4vw;
+      }
+
+      button {
+        margin-top: 3vw;
+        color: white;
+        background-color: yellowgreen;
+        font-size: 2vw;
+        width: 15vw;
+      }
+    }
+  }
+
+  .main-content {
+    margin-top: -8vw;
+
+    .left-content {
+      img {
+        margin-top: -6vw;
+      }
+      h5 {
+        margin-top: -3vw;
+        font-weight: 700;
+        font-size: 14pt;
+      }
+    }
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+}
+
+body {
+  background-color: @color-light-gray !important;
+
+  .img-fluid {
+    width: 100%;
+  }
+}
+
+.bg-primary {
+  background-color: @color-main !important;
+}
+
+.main-menu {
+  background-color: @color-accent1;
+
+  a {
+    color: #fff;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .nav-link {
+      background-color: @color-accent2;
+      height: 43px;
+      margin-top: 15px;
+      margin-left: 5px;
+      padding-bottom: 10px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+
+      &.active {
+        background-color: @color-accent3;
+      }
+    }
+
+    .right {
+      .nav-link {
+        font-size: 12px;
+        background-color: transparent;
+
+        &.active {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      background-color: @color-accent3;
+      margin: 0px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border: none;
+
+      a {
+        display: table-cell;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+.maps {
+  height: 550px;
+
+  .gm-style-mtc,
+  .gm-svpc {
+    display: none;
+  }
+}
+
+.search-bar {
+  margin-top: -5%;
+  position: relative;
+  color: @color-white;
+
+  .container {
+    background-color: @color-accent1;
+    padding: 10px;
+
+    .badge {
+      margin-right: 5px;
+      padding: 12px !important;
+      border-radius: 50% !important;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.footer {
+  background-color: @color-accent2;
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+
+  p {
+    margin-bottom: 2px;
+  }
+
+  .copyright {
+    color: @color-yellow;
+  }
+
+  .info {
+    color: @color-white;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .table > tbody > tr > td,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > td,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > thead > tr > th {
+    display: block;
+    min-width: 100% !important;
+  }
+  .table > thead > tr > th {
+    display: none;
+  }
+
+  .table .tableBody span {
+    display: block;
+  }
+}
