@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +31,6 @@ Route::get('/regulasi', function () {
 Route::get('/kontak', function () {
     return view('kontak');
 });
+
+Route::get('/calc','HomeController@calc');
+Route::get('/calc2','HomeController@calc2');
