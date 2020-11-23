@@ -9,27 +9,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- favicon
 	============================================ -->
-  <link rel="shortcut icon" type="image/x-icon" href="public/img/esdm.png">
-    
+  <link rel="shortcut icon" type="image/x-icon" href="{{{ URL::asset('img/esdm.png')}}}">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="public/css/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="{{{ URL::asset('css/bootstrap/bootstrap.min.css')}}}" />
 
   <!-- Fontawesome CSS -->
-  <link rel="stylesheet" href="public/css/fontawesome/all.min.css" />
+  <link rel="stylesheet" href="{{{ URL::asset('css/fontawesome/all.min.css')}}}" />
 
   <!-- Chart CSS -->
-  <link rel="stylesheet" href="public/css/Chart.min.css" />
+  <link rel="stylesheet" href="{{{ URL::asset('css/Chart.min.css')}}}" />
 
 
-  <link rel="stylesheet" href="public/css/introjs.min.css" />
-  <link rel="stylesheet" href="public/css/introjs-modern.css" />
+  <link rel="stylesheet" href="{{{ URL::asset('css/introjs.min.css')}}}" />
+  <link rel="stylesheet" href="{{{ URL::asset('css/introjs-modern.css')}}}" />
 
   <!-- style CSS
     ============================================ -->
-  <link rel="stylesheet/less" type="text/css" href="public/css/style.less" />
+  <link rel="stylesheet/less" type="text/css" href="{{{ URL::asset('css/style.less')}}}" />
 
   <style type="text/css">
     /* Center the loader */
@@ -94,7 +94,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="public/img/esmart.png" alt="app_icon" width="auto" height="40" loading="lazy" />
+        <img src="{{{ URL::asset('img/esmart.png')}}}" alt="app_icon" width="auto" height="40" loading="lazy" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -944,19 +944,19 @@
   <!-- End Footer area-->
 
   <!-- jquery  -->
-  <script src="public/js/jquery-3.5.1.min.js"></script>
+  <script src="{{{ URL::asset('js/jquery-3.5.1.min.js')}}}"></script>
   <!-- bootstrap JS  -->
-  <script src="public/js/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="public/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="{{{ URL::asset('js/bootstrap/bootstrap.bundle.min.js')}}}"></script>
+  <script src="{{{ URL::asset('js/bootstrap/bootstrap.bundle.min.js')}}}"></script>
   <!-- Chart JS -->
-  <script src="public/js/Chart.min.js"></script>
+  <script src="{{{ URL::asset('js/Chart.min.js')}}}"></script>
 
   <!-- intro JS  -->
-  <script src="public/js/intro.min.js"></script>
+  <script src="{{{ URL::asset('js/intro.min.js')}}}"></script>
 
   <!-- LESS -->
-  <script src="public/js/less.min.js"></script>
-  <script src="public/js/accounting.js"></script>
+  <script src="{{{ URL::asset('js/less.min.js')}}}"></script>
+  <script src="{{{ URL::asset('js/accounting.js')}}}"></script>
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ_YAen9tZXKU4Mp6lR692gCjBpybQIhk&libraries=drawing,geometry,visualization,places&sensor=false"></script>
 
@@ -1111,17 +1111,16 @@
         var tarif = tarif_listrik;//'1467';
 
         jQuery.ajax({
-              url: 'calc2.php',
+              url: '/calc2',
               type: 'get',
               dataType: "json",
               contentType: "application/json;charset=utf-8",
               data: { "Biaya_Investasi_": Biaya_Investasi_, "Biaya_inverter_" : Biaya_inverter_, "Estimasi_Penghematan_" : Estimasi_Penghematan_, "Operasional" : Operasional, "Depresiasi_modul" : Depresiasi_modul,
           "Produksi_PLTS" : Produksi_PLTS, "tarif" : tarif, "tModalFinansial" : txtModalFinansial,"tPinjaman":txtPinjaman,"tBungaPinjaman":txtBungaPinjaman,"tBungaDiskon":txtBungaDiskon, "tUmurPLTS":txtUmurPLTS, "tLamaPinjam":txtLamaPinjam , "self_consumption":self_consumption_,"kwh_ekspor":kwh_ekspor_},
               success: function(response) {
-
                 var cardSimulasiHasil = document.getElementById("SimulasiHasil");
                     cardSimulasiHasil.style.display = "block";
-                //alert(response.irrProject);
+                alert(response);
                 //var txtIRRProject_ = Math.round(response.irrProject).toFixed(2);
                 txtIRRProject.value = response.irrProject;
                 //alert(response.irrEquity);
@@ -1299,7 +1298,7 @@
           var divLoading = document.getElementById("loader");
           divLoading.style.display = "block";
           jQuery.ajax({
-                  url: 'calc.php',
+                  url: '/calc',
                   type: 'get',
                   dataType: "json",
                   contentType: "application/json;charset=utf-8",
